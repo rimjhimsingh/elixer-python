@@ -1,7 +1,7 @@
 # elixer-python
 Here we use regular expressions to implement a trivial scanner and implement a recursive-descent parser for a small language.
 
-###Useful definitions to know:
+### Useful definitions to know:
 A sentence in the language consists of a sequence of zero-or-more data-literal's.
 
 A data-literal is either a list literal, a tuple literal, a map literal, or a primitive literal.
