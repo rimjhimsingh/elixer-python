@@ -1,0 +1,29 @@
+sentence = data_literal* ;
+
+data_literal = primitive_literal | list_literal | tuple_literal | map_literal ;
+
+primitive_literal = integer | atom | boolean ;
+
+list_literal = '[' data_literal ( ',' data_literal )* ']' ;
+
+tuple_literal = '{' data_literal ( ',' data_literal )* '}' ;
+
+map_literal = '%{' key_pair ( ',' key_pair )* '}' ;
+
+(*key_pair = data_literal '=>' data_literal
+            | key data_literal ;*)
+
+key_pair = data_literal ( ':' | '=>' ) data_literal ;
+
+            
+integer = digit ( digit | '_' )* ;
+
+atom = ':' ( letter | '_' ) ( alphanumeric | '_' )* ;
+
+key = ( letter | '_' ) ( alphanumeric | '_' )* ':' ;
+
+boolean = 'true' | 'false' ;
+
+letter = 'a' | ... | 'z' | 'A' | ... | 'Z' ;
+digit = '0' | ... | '9' ;
+alphanumeric = letter | digit ;
